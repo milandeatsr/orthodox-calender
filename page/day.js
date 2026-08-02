@@ -1,4 +1,5 @@
 import { createWidget, widget, align, text_style } from '@zos/ui'
+import * as hmUI from '@zos/ui'
 
 Page({
   build() {
@@ -32,28 +33,22 @@ Page({
     // Display the appropriate image based on fasting day
     if (isWednesdayOrFriday) {
       // Fasting day: Display fish.png and wineandbread.png
-      const fishImg = createWidget(widget.IMG, {
+      const fishImg = hmUI.createWidget(hmUI.widget.IMG, {
         x: 120,
         y: 150,
-        w: 100,
-        h: 100,
         src: 'assets/fish.png'
       })
       
-      const wineAndBreadImg = createWidget(widget.IMG, {
+      const wineAndBreadImg = hmUI.createWidget(hmUI.widget.IMG, {
         x: 220,
         y: 150,
-        w: 100,
-        h: 100,
         src: 'assets/wineandbread.png'
       })
     } else {
       // Non-fasting day: Display fried-chicken.png
-      const friedChickenImg = createWidget(widget.IMG, {
+      const friedChickenImg = hmUI.createWidget(hmUI.widget.IMG, {
         x: 120,
         y: 150,
-        w: 200,
-        h: 100,
         src: 'assets/fried-chicken.png'
       })
     }
