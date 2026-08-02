@@ -8,3 +8,4 @@ App({
     console.log('app on destroy invoke')
   }
 })
+
