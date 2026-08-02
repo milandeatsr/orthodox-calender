@@ -34,7 +34,6 @@ Page({
       font: 'fonts/custom.ttf',
       text_i18n: {
         'en-US': 'Orthodox Calendar',
-        'zh-CN': '正教历法',
         'sr-RS': 'Pravoslavni Kalendar',
         'de-DE': 'Orthodoxer Kalender'
       }
