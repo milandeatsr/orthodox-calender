@@ -29,7 +29,7 @@ Page({
       text: dateText
     })
 
-    // Display fasting day message if Wednesday or Friday
+    // Display fasting day message
     if (isWednesdayOrFriday) {
       const fastingText = createWidget(widget.TEXT, {
         x: 96,
@@ -42,6 +42,19 @@ Page({
         align_v: align.CENTER_V,
         text_style: text_style.NONE,
         text: 'Today is a fasting day (Wednesday/Friday)'
+      })
+    } else {
+      const noFastingText = createWidget(widget.TEXT, {
+        x: 96,
+        y: 200,
+        w: 288,
+        h: 80,
+        color: 0xffffff,
+        text_size: 24,
+        align_h: align.CENTER_H,
+        align_v: align.CENTER_V,
+        text_style: text_style.NONE,
+        text: 'Today is not a fasting day'
       })
     }
   }
