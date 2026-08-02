@@ -12,7 +12,7 @@ Page({
       align_h: align.CENTER_H,
       align_v: align.CENTER_V,
       text_style: text_style.NONE,
-      text: 'HELLO, Zepp OS'
+      text: 'Orthodox Calendar'
     })
 
     text.addEventListener(event.CLICK_DOWN, (info) => {
@@ -33,8 +33,10 @@ Page({
       text_style: text_style.NONE,
       font: 'fonts/custom.ttf',
       text_i18n: {
-        'en-US': 'Hello Zepp OS',
-        'zh-CN': '你好 Zepp OS'
+        'en-US': 'Orthodox Calendar',
+        'zh-CN': '正教历法',
+        'sr-RS': 'Pravoslavni Kalendar',
+        'de-DE': 'Orthodoxer Kalender'
       }
     })
   }

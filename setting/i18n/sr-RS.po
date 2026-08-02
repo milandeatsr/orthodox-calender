@@ -1,0 +1,2 @@
+msgid "example"
+msgstr "Ovo je primer u postavkama aplikacije"

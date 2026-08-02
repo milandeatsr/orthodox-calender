@@ -1,0 +1,2 @@
+msgid "example"
+msgstr "Dies ist ein Beispiel in den App-Einstellungen"
