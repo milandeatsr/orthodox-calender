@@ -1,4 +1,5 @@
 import { createWidget, widget, align, prop, text_style, event } from '@zos/ui'
+import { router } from '@zos/router'
 
 Page({
   build() {
@@ -15,28 +16,11 @@ Page({
       text: 'Orthodox Calendar'
     })
 
-    text.addEventListener(event.CLICK_DOWN, (info) => {
-      text.setProperty(prop.MORE, {
-        y: 200
+    // Navigate to the day display page after 2 seconds
+    setTimeout(() => {
+      router.push({
+        url: 'page/day'
       })
-    })
-
-    const textWithFont = createWidget(widget.TEXT, {
-      x: 96,
-      y: 300,
-      w: 288,
-      h: 46,
-      color: 0xffffff,
-      text_size: 36,
-      align_h: align.CENTER_H,
-      align_v: align.CENTER_V,
-      text_style: text_style.NONE,
-      font: 'fonts/custom.ttf',
-      text_i18n: {
-        'en-US': 'Orthodox Calendar',
-        'sr-RS': 'Pravoslavni Kalendar',
-        'de-DE': 'Orthodoxer Kalender'
-      }
-    })
+    }, 2000)
   }
 })
