@@ -3,20 +3,20 @@ import * as hmUI from '@zos/ui'
 
 Page({
   build() {
-    // Get the current date
+    // Aktuelles Datum abrufen
     const now = new Date()
     const day = now.getDate()
-    const month = now.getMonth() + 1 // Months are 0-indexed
+    const month = now.getMonth() + 1 // Monate sind 0-indexiert
     const year = now.getFullYear()
-    const dayOfWeek = now.getDay() // 0 (Sunday) to 6 (Saturday)
+    const dayOfWeek = now.getDay() // 0 (Sonntag) bis 6 (Samstag)
     
-    // Check if today is Wednesday (3) or Friday (5)
+    // Prüfen, ob heute Mittwoch (3) oder Freitag (5) ist
     const isWednesdayOrFriday = dayOfWeek === 3 || dayOfWeek === 5
     
-    // Format the date as DD/MM/YYYY
+    // Datum im Format TT/MM/JJJJ formatieren
     const dateText = `${day.toString().padStart(2, '0')}/${month.toString().padStart(2, '0')}/${year}`
     
-    // Display the date
+    // Datum anzeigen
     const dayText = createWidget(widget.TEXT, {
       x: 96,
       y: 80,
@@ -30,27 +30,33 @@ Page({
       text: dateText
     })
 
-    // Display the appropriate image based on fasting day
+    // Konvertierte Bilder anzeigen
     if (isWednesdayOrFriday) {
-      // Fasting day: Display fish.png and wineandbread.png
-      const fishImg = hmUI.createWidget(hmUI.widget.IMG, {
-        x: 120,
-        y: 150,
-        src: 'assets/default.b/fish.png'
-      })
+      // Fastentag: Fisch und Wein/Brot anzeigen
+      if (global.fishConvertedPath) {
+        hmUI.createWidget(hmUI.widget.IMG, {
+          x: 100,
+          y: 150,
+          src: global.fishConvertedPath
+        })
+      }
       
-      const wineAndBreadImg = hmUI.createWidget(hmUI.widget.IMG, {
-        x: 220,
-        y: 150,
-        src: 'assets/default.b/wineandbread.png'
-      })
+      if (global.wineAndBreadConvertedPath) {
+        hmUI.createWidget(hmUI.widget.IMG, {
+          x: 200,
+          y: 150,
+          src: global.wineAndBreadConvertedPath
+        })
+      }
     } else {
-      // Non-fasting day: Display fried-chicken.png
-      const friedChickenImg = hmUI.createWidget(hmUI.widget.IMG, {
-        x: 120,
-        y: 150,
-        src: 'assets/default.b/fried-chicken.png'
-      })
+      // Kein Fastentag: Frittiertes Hähnchen anzeigen
+      if (global.friedChickenConvertedPath) {
+        hmUI.createWidget(hmUI.widget.IMG, {
+          x: 150,
+          y: 150,
+          src: global.friedChickenConvertedPath
+        })
+      }
     }
   }
 })
