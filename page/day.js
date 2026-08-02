@@ -18,7 +18,7 @@ Page({
     // Display the date
     const dayText = createWidget(widget.TEXT, {
       x: 96,
-      y: 120,
+      y: 80,
       w: 288,
       h: 46,
       color: 0xffffff,
@@ -29,32 +29,32 @@ Page({
       text: dateText
     })
 
-    // Display fasting day message
+    // Display the appropriate image based on fasting day
     if (isWednesdayOrFriday) {
-      const fastingText = createWidget(widget.TEXT, {
-        x: 96,
-        y: 200,
-        w: 288,
-        h: 80,
-        color: 0xffffff,
-        text_size: 24,
-        align_h: align.CENTER_H,
-        align_v: align.CENTER_V,
-        text_style: text_style.NONE,
-        text: 'Today is a fasting day (Wednesday/Friday)'
+      // Fasting day: Display fish.png and wineandbread.png
+      const fishImg = createWidget(widget.IMG, {
+        x: 120,
+        y: 150,
+        w: 100,
+        h: 100,
+        src: 'assets/fish.png'
+      })
+      
+      const wineAndBreadImg = createWidget(widget.IMG, {
+        x: 220,
+        y: 150,
+        w: 100,
+        h: 100,
+        src: 'assets/wineandbread.png'
       })
     } else {
-      const noFastingText = createWidget(widget.TEXT, {
-        x: 96,
-        y: 200,
-        w: 288,
-        h: 80,
-        color: 0xffffff,
-        text_size: 24,
-        align_h: align.CENTER_H,
-        align_v: align.CENTER_V,
-        text_style: text_style.NONE,
-        text: 'Today is not a fasting day'
+      // Non-fasting day: Display fried-chicken.png
+      const friedChickenImg = createWidget(widget.IMG, {
+        x: 120,
+        y: 150,
+        w: 200,
+        h: 100,
+        src: 'assets/fried-chicken.png'
       })
     }
   }
