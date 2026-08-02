@@ -1,5 +1,5 @@
-import { createWidget, widget, align, prop, text_style, event } from '@zos/ui'
-import { router } from '@zos/router'
+import { createWidget, widget, align, text_style } from '@zos/ui'
+import { push } from '@zos/router'
 
 Page({
   build() {
@@ -18,7 +18,7 @@ Page({
 
     // Navigate to the day display page after 2 seconds
     setTimeout(() => {
-      router.push({
+      push({
         url: 'page/day'
       })
     }, 2000)

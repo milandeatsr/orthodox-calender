@@ -25,7 +25,8 @@
       "module": {
         "page": {
           "pages": [
-            "page/index"
+            "page/index",
+            "page/day"
           ]
         },
         "app-side": {
