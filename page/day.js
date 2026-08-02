@@ -36,20 +36,20 @@ Page({
       const fishImg = hmUI.createWidget(hmUI.widget.IMG, {
         x: 120,
         y: 150,
-        src: 'assets/default.r/fish.png'
+        src: 'assets/default.b/fish.png'
       })
       
       const wineAndBreadImg = hmUI.createWidget(hmUI.widget.IMG, {
         x: 220,
         y: 150,
-        src: 'assets/default.r/wineandbread.png'
+        src: 'assets/default.b/wineandbread.png'
       })
     } else {
       // Non-fasting day: Display fried-chicken.png
       const friedChickenImg = hmUI.createWidget(hmUI.widget.IMG, {
         x: 120,
         y: 150,
-        src: 'assets/default.r/fried-chicken.png'
+        src: 'assets/default.b/fried-chicken.png'
       })
     }
   }
