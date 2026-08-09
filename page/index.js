@@ -20,6 +20,41 @@ Page(
       });
 
       this.fetchData();
+
+        // Konvertierte Bilder anzeigen
+
+  // Bilder anzeigen
+  if (isWednesdayOrFriday) {
+    // Wein und Brot
+    hmUI.createWidget(hmUI.widget.IMG, {
+      x: 60,
+      y: 150,
+      w: 150,
+      h: 150,
+      src: 'wineandbread.png'
+    })
+
+    // Fisch
+    hmUI.createWidget(hmUI.widget.IMG, {
+      x: 244,
+      y: 150,
+      w: 150,
+      h: 150,
+      src: 'fish.png'
+    })
+
+  } else {
+    // Frittiertes Hähnchen
+    hmUI.createWidget(hmUI.widget.IMG, {
+      x: 152,
+      y: 150,
+      w: 150,
+      h: 150,
+      src: 'fried-chicken.png'
+    })
+  }
+
+
     },
 
     fetchData() {
