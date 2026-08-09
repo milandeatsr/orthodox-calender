@@ -22,7 +22,9 @@ async function fetchData(res) {
 
 AppSideService(
   BaseSideService({
-    onInit() {},
+    onInit() {
+      console.log("AppSideService onInit");
+    },
 
     onRequest(req, res) {
       console.log("=====>,", req.method);
@@ -31,8 +33,12 @@ AppSideService(
       }
     },
 
-    onRun() {},
+    onRun() {
+      console.log("AppSideService onRun");
+    },
 
-    onDestroy() {},
+    onDestroy() {
+      console.log("AppSideService onDestroy");
+    },
   })
 );
