@@ -10,6 +10,20 @@ Page(
   BasePage({
 
     build() {
+
+
+    const now = new Date()
+    const day = now.getDate()
+    const month = now.getMonth() + 1 // Monate sind 0-indexiert
+    const year = now.getFullYear()
+    const dayOfWeek = now.getDay() // 0 (Sonntag) bis 6 (Samstag)
+
+
+    
+    // Prüfen, ob heute Mittwoch (3) oder Freitag (5) ist
+    const isWednesdayOrFriday = dayOfWeek === 3 || dayOfWeek === 5
+
+
       textWidget = hmUI.createWidget(hmUI.widget.TEXT, {
         x: 20,
         y: 100,
